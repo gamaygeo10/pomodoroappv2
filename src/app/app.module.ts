@@ -5,16 +5,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-import { LocalNotifications } from '@awesome-cordova-plugins/local-notifications/ngx';
-import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
-    LocalNotifications,
-    Vibration,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

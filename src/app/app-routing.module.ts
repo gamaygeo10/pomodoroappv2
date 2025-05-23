@@ -11,6 +11,15 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  // Add a wildcard route to handle 404s
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
 ];
 
 @NgModule({

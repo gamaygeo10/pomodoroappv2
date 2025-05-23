@@ -1,23 +1,65 @@
-.clock {
-  margin-top: 30px;
-
-  h2 {
-    font-size: 18px;
-    color: #6c757d;
-  }
-
-  h1 {
-    font-size: 36px;
-    color: #212529;
-  }
+.form-container {
+  max-width: 320px;
+  margin: 20px auto;
+  padding: 0 15px;
+  background-color: white;
 }
 
-.countdown {
-  font-size: 60px;
-  color: #dc3545;
-  margin: 30px 0;
+.custom-input-item {
+  --background: #f4f5f8;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-color: transparent;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --inner-padding-end: 10px;
+  font-size: 14px;
 }
 
-ion-button {
-  margin-top: 20px;
+ion-label {
+  font-weight: 600;
+  color: #333333;
+  font-size: 14px;
+}
+
+ion-input {
+  --color: #333333;
+  font-size: 14px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.add-button {
+  width: 150px;
+  height: 40px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  --background: #1e3c72;
+  --background-hover: #2a5298;
+  --box-shadow: 0 4px 10px rgba(30, 60, 114, 0.3);
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+ion-select {
+  width: 100%;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+form {
+  padding-bottom: 20px;
+}
+
+::ng-deep .select-interface-option {
+  font-size: 14px !important;
+}
+
+ion-item.item-has-focus ion-label[position="floating"] {
+  font-size: 12px !important;
 }

@@ -1,21 +1,52 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Pomodoro Timer</ion-title>
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title>Add Items</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToProfile()" title="Go to Inventory">
+        <ion-icon slot="icon-only" name="cube-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding ion-text-center">
-  <div class="clock">
-    <h2>Current Time</h2>
-    <h1>{{ currentTime }}</h1>
-  </div>
+<ion-content [fullscreen]="true" style="--background: white !important;">
+  <div class="form-container">
+    <form (submit)="addItem()" novalidate>
+      <ion-item class="custom-input-item" lines="full">
+        <ion-label position="floating" color="medium">Item Name</ion-label>
+        <ion-input [(ngModel)]="itemName" name="itemName" required></ion-input>
+      </ion-item>
 
-  <div *ngIf="countdownTime">
-    <h2>{{ sessionType === 'work' ? 'Work Session' : 'Break Time' }}</h2>
-    <h1 class="countdown">{{ countdownTime }}</h1>
-  </div>
+      <ion-item class="custom-input-item" lines="full">
+        <ion-label>Status</ion-label>
+        <ion-select [(ngModel)]="status" name="status" interface="popover" required>
+          <ion-select-option value="Enabled">Enabled</ion-select-option>
+          <ion-select-option value="Disabled">Disabled</ion-select-option>
+        </ion-select>
+      </ion-item>
 
-  <ion-button expand="block" (click)="startPomodoro()" [disabled]="isRunning">
-    Start Pomodoro Cycle
-  </ion-button>
+      <ion-item class="custom-input-item" lines="full">
+  <ion-label>Item Group</ion-label>
+  <ion-select [(ngModel)]="itemGroup" name="itemGroup" interface="popover" required>
+    <ion-select-option value="Consumable">Consumable</ion-select-option>
+    <ion-select-option value="Products">Products</ion-select-option>
+    <ion-select-option value="Raw Material">Raw Material</ion-select-option>
+    <ion-select-option value="Services">Services</ion-select-option>
+    <ion-select-option value="Sub Assemblies">Sub Assemblies</ion-select-option>
+  </ion-select>
+</ion-item>
+
+
+      <ion-item class="custom-input-item" lines="full">
+        <ion-label position="floating" color="medium">ID</ion-label>
+        <ion-input [(ngModel)]="id" name="id" required></ion-input>
+      </ion-item>
+
+      <div class="button-container">
+        <ion-button type="submit" color="secondary" class="add-button" shape="round" size="default">
+          Add Item
+        </ion-button>
+      </div>
+    </form>
+  </div>
 </ion-content>

@@ -35,3 +35,73 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Add these stronger overrides at the end of your global.scss file */
+/* Global Ionic theme overrides */
+/* Global Ionic theme overrides */
+:root {
+  --ion-background-color: #fff; /* White background for clean look */
+  --ion-background-color-rgb: 255, 255, 255;
+
+  --ion-card-background: #fafafa;
+  --ion-item-background: #fafafa;
+
+  --ion-text-color: #262626; /* Dark gray text */
+  --ion-text-color-rgb: 38, 38, 38;
+
+  /* Replace orange colors with blue */
+  --ion-color-primary: #1e3c72; /* Blue instead of orange */
+  --ion-color-primary-rgb: 30, 60, 114;
+  --ion-color-primary-contrast: #fff;
+
+  --ion-color-secondary: #4facfe; /* Light blue instead of orange */
+  --ion-color-secondary-contrast: #fff;
+
+  --ion-color-medium: #8e8e8e;
+
+  --ion-toolbar-background: var(--ion-color-primary);
+  --ion-toolbar-color: var(--ion-color-primary-contrast);
+  --ion-button-background: var(--ion-color-primary);
+  --ion-button-color: var(--ion-color-primary-contrast);
+  --ion-border-radius: 12px;
+}
+
+/* Replace gradient background with solid white */
+body, ion-app, ion-content, ion-page {
+  background: #fff !important;
+  color: var(--ion-text-color);
+  min-height: 100vh;
+}
+
+/* Make sure ion-content inherits background */
+ion-content {
+  --background: var(--ion-background-color);
+}
+
+/* Cards and items styling */
+ion-card, ion-item {
+  --background: var(--ion-card-background);
+  border-radius: var(--ion-border-radius);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  margin-bottom: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+ion-card:hover, ion-item:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+
+/* Buttons */
+ion-button {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: var(--ion-border-radius);
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-primary-contrast);
+  box-shadow: 0 2px 4px rgb(56 151 240 / 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+ion-button:hover, ion-button:focus {
+  box-shadow: 0 4px 10px rgb(56 151 240 / 0.7);
+}
